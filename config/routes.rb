@@ -5,8 +5,12 @@ Saschu::Application.routes.draw do
   get "home/index"
 
   root :to => "home#index"
+
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
+
   # The priority is based upon order of creation:
-  # first created -> highest priority.
+  # first created -> highe<<<st priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
