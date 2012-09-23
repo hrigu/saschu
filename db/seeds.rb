@@ -19,6 +19,8 @@ users = [
     last_name: 'Muehlethaler',
     email: 'bene@gmail.com',
     password: 'please',
+    class_name: "5c",
+    sex: User::MALE,
     role: "student"
 }
 

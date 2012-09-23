@@ -1,4 +1,6 @@
 Saschu::Application.routes.draw do
-  devise_for :users
+  get "user_registrations/create"
+
+  devise_for :users, controllers: { registrations: 'UserRegistrations' }
   root :to => "home#index"
 end
