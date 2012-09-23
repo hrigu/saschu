@@ -1,5 +1,4 @@
 puts 'SETTING UP DEFAULT USER LOGIN'
-
 users = [
 {
     first_name: 'Christian',
@@ -21,6 +20,6 @@ users = [
 
 users.each do |u|
   u[:password_confirmation] = u[:password]
-  user = create! u
+  user = User.create! u
   puts 'New user created: ' << user.first_name
 end

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120922200631) do
 
   create_table "users", :force => true do |t|
-    t.string   "email"
+    t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(:version => 20120922200631) do
     t.string   "last_sign_in_ip"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "type"
-    t.boolean  "admin"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
