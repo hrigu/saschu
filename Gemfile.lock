@@ -83,6 +83,7 @@ GEM
     gherkin (2.11.2)
       json (>= 1.4.6)
     hike (1.2.1)
+    hirb (0.7.0)
     hub (1.10.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -204,6 +205,7 @@ DEPENDENCIES
   devise (>= 2.1.2)
   email_spec (>= 1.2.1)
   factory_girl_rails (>= 4.0.0)
+  hirb
   hub (>= 1.10.2)
   jquery-rails
   launchy (>= 2.1.2)
