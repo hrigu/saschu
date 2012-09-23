@@ -35,4 +35,9 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # add devise helper see https://github.com/plataformatec/devise#test-helpers
+  # sign_in :user, @user   # sign_in(scope, resource)
+  # sign_in @user          # sign_in(resource)
+  config.include Devise::TestHelpers, :type => :controller
 end
