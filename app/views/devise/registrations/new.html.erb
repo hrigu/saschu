@@ -10,7 +10,7 @@
 
     <%# wird nur fuer Studenten angezeigt %>
     <div class="student_part">
-      <%= f.input :class_name%>
+      <%= f.association :school_class, collection: SchoolClass.all, selected: SchoolClass.first%>
       <%= f.input :age, :collection => 6..15, selected: 8 %>
       <%= f.input :sex, collection:[["Mädchen", User::FEMALE], ["Junge", User::MALE]], as: :radio_buttons, checked: User::FEMALE %>
     </div>
