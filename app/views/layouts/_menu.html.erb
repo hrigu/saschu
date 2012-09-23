@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+
+    <ul class="nav">
+      <li><%= link_to "Link1", "/path1" %></li>
+      <li><%= link_to "Link2", "/path2" %></li>
+      <li><%= link_to "Link3", "/path3" %></li>
+
+      <% if current_user.has_role? :admin %>
+          <li><%= link_to "admin", "/path3" %></li>
+      <% end %>
+
+    </ul>
+<% end %>
