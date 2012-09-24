@@ -1,6 +1,6 @@
 class CreateAdmins < ActiveRecord::Migration
   def change
-    create_table :admins do |t|
+    create_table :administrators do |t|
 
       t.timestamps
     end

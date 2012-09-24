@@ -14,7 +14,7 @@ user_desc = [
         email: 'chmuehlethaler@freesurf.ch',
         password: 'please',
         role: {
-            type: :admin
+            type: :administrator
         }
     },
     {
@@ -56,14 +56,16 @@ class UserCreator
 
   def add_role user, role
     role = case role[:type]
-             when :admin
-               Admin.create!
+             when :administrator
+               Administrator.create!
              when :student
                values = role[:values]
                puts values
                class_name = values.delete :class_name
                s = Student.create! values
-               s.school_class = SchoolClass.find_by_name class_name
+               s.school_class = SchoolClass.find_by_name(class_name)
+               s.save
+               s
              when :parent
                Parent.create!
            end

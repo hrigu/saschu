@@ -15,9 +15,12 @@ class User < ActiveRecord::Base
   belongs_to :rolable, :polymorphic => true
 
   def has_role? role_id
-    role_name = role_id.to_s.capitalize
-    x = rolable_type == role_name
-    x
+    rolable_type == role_id.to_s.capitalize
   end
+
+  def is_admin?
+    has_role? :administrator
+  end
+
 
 end
