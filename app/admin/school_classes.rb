@@ -5,7 +5,8 @@ ActiveAdmin.register SchoolClass do
       row "Students" do
         table_for sc.students do
           column :first_name do |student|
-            student.user.first_name
+
+            link_to student.user.first_name, admin_student_path(student)
           end
           column :last_name do |student|
             student.user.last_name

@@ -13,12 +13,6 @@ ActiveAdmin.register User do
 
   end
 
-  show do |user|
-    attributes_table do
-      row :email
-    end
-#    active_admin_comments
-  end
 
 
 end
