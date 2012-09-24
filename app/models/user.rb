@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   MALE = 0
   FEMALE = 1
-  rolify
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -12,6 +12,12 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :age, :sex, :school_class_id
 
-  belongs_to :school_class
+  belongs_to :rolable, :polymorphic => true
+
+  def has_role? role_id
+    role_name = role_id.to_s.capitalize
+    x = rolable_type == role_name
+    x
+  end
 
 end
