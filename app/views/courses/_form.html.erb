@@ -1,0 +1,15 @@
+<%= simple_form_for(@course) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :class_min %>
+    <%= f.input :class_max %>
+    <%= f.input :where %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

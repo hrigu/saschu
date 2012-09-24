@@ -9,7 +9,7 @@ class CreateTeachers < ActiveRecord::Migration
     end
 
     change_table :school_classes do |t|
-      t.references :teachers
+      t.references :teacher
     end
   end
 end

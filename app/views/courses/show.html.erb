@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @course.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @course.description %>
+</p>
+
+<p>
+  <b>Class min:</b>
+  <%= @course.class_min %>
+</p>
+
+<p>
+  <b>Class max:</b>
+  <%= @course.class_max %>
+</p>
+
+<p>
+  <b>Where:</b>
+  <%= @course.where %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
