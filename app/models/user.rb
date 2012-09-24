@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
          :validatable #password_length: See config/initializers/devisec.rb
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :age, :sex, :school_class_id
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :age, :sex
 
   belongs_to :rolable, :polymorphic => true
 
