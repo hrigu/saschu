@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     has_role? :parent
   end
 
+  def is_student?
+    has_role? :student
+  end
+
   def name
     return [first_name, last_name].join " "
   end

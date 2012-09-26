@@ -13,6 +13,10 @@ class Ability
       can :create, Course
       can :read, Course
       can :my, Course
+    elsif user.is_student?
+      can :choose, Course
+      can :mychoose, Course
+      can :read, :all
     else
       can :read, :all
     end

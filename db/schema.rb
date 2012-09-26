@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20120926121542) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "choosen_courses", :id => false, :force => true do |t|
+  create_table "choosen_courses", :force => true do |t|
     t.integer "course_id"
     t.integer "student_id"
     t.integer "priority"

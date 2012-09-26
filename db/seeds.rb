@@ -32,6 +32,15 @@ user_desc = [
         }
     },
     {
+        first_name: 'Meister',
+        last_name: 'Propper',
+        email: 'mp@gmail.com',
+        password: 'please',
+        role: {
+            type: :parent
+        }
+    },
+    {
         first_name: 'Benedikt',
         last_name: 'Muehlethaler',
         email: 'bene@gmail.com',
@@ -48,15 +57,34 @@ user_desc = [
 ]
 
 course_desc = [
-{
-    title: "Häkeln mit Pfiff",
-    description: "Tapfloppen für den Heimgebrauch",
-    num_of_students: 6,
-    class_min: 4,
-    class_max: 6,
-    where: "Zuhause",
-    chef: "maria.albisetti@gmail.com"
-}
+    {
+        title: "Häkeln mit Pfiff",
+        description: "Topflappen für den Heimgebrauch",
+        num_of_students: 6,
+        class_min: 4,
+        class_max: 6,
+        where: "Zuhause",
+        chef: "maria.albisetti@gmail.com"
+    },
+    {
+        title: "Kochen für Kinder",
+        description: "Salzteigknusperli",
+        num_of_students: 22,
+        class_min: 1,
+        class_max: 4,
+        where: "Küche",
+        chef: "bb@gmail.com"
+    },
+    {
+        title: "Zimmer auf Hockglanz bringen",
+        description: "Wir machen zuerst einen Saustall, dann putzen wir alles wieder",
+        num_of_students: 11,
+        class_min: 1,
+        class_max: 6,
+        where: "Bei dir im Zimmer",
+        chef: "mp@gmail.com"
+    }
+
 ]
 
 class UserCreator
@@ -100,6 +128,7 @@ class CourseCreator
       course = Course.new c
       course.parent = User.find_by_email(chef).rolable
       course.save
+      puts 'New course created: ' << course.title
     end
   end
 end

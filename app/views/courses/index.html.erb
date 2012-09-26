@@ -14,16 +14,16 @@
     <th></th>
   </tr>
 
-<% @courses.each do |course| %>
-  <tr>
-    <td><%= course.title %></td>
-    <td><%= course.description %></td>
-    <td><%= course.num_of_students %></td>
-    <td><%= course.class_min %></td>
-    <td><%= course.class_max %></td>
-    <td><%= course.where %></td>
-  </tr>
-<% end %>
+  <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.description %></td>
+        <td><%= course.num_of_students %></td>
+        <td><%= course.class_min %></td>
+        <td><%= course.class_max %></td>
+        <td><%= course.where %></td>
+      </tr>
+  <% end %>
 </table>
 
-<br />
+<br/>

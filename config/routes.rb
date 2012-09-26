@@ -2,6 +2,8 @@ Saschu::Application.routes.draw do
 
   resources :courses do
     get 'my', on: :collection
+    get 'choose', on: :collection
+    post "mychoose", on: :collection
   end
 
   ActiveAdmin.routes(self)

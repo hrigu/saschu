@@ -3,7 +3,7 @@
     <ul class="nav">
 
       <% if current_user.has_role? :student %>
-          <li><%= link_to "student", "/path1" %></li>
+          <li><%= link_to "Wähle Kurse", choose_courses_path %></li>
       <% end %>
       <% if current_user.has_role? :parent %>
           <li><%= link_to "my_course", my_courses_path %></li>

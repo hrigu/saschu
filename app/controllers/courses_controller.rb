@@ -1,7 +1,9 @@
+# -*- encoding : utf-8 -*-
+
 class CoursesController < ApplicationController
 
   #can_can
-  load_and_authorize_resource #cancan
+  load_and_authorize_resource except: [:choose, :mychoose]  #cancan
 
   # GET /courses
   def index
@@ -57,4 +59,34 @@ class CoursesController < ApplicationController
     redirect_to courses_url
   end
 
+  def choose
+    authorize! :choose, Course
+
+    @courses = Course.find_for_student current_user.rolable
+  end
+
+  def mychoose
+    authorize! :mychoose, Course
+
+    first = params[:first]
+    second = params[:second]
+    third = params[:third]
+
+    if first.present?
+      course = Course.find(first.to_i)
+      cc = ChoosenCourse.new({priority: 1})
+      cc.course = course
+      cc.student = current_user.rolable
+      cc.save
+    end
+    if second.present?
+      course = Course.find(second.to_i)
+      cc = ChoosenCourse.new({priority: 2})
+      cc.course = course
+      cc.student = current_user.rolable
+      cc.save
+    end
+    redirect_to root_path, notice: 'Kurse wurden gewählt'
+
+  end
 end

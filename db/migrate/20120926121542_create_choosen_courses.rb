@@ -1,6 +1,6 @@
 class CreateChoosenCourses < ActiveRecord::Migration
   def up
-    create_table :choosen_courses, :id => false do |t|
+    create_table :choosen_courses do |t|
       t.integer :course_id
       t.integer :student_id
       t.integer :priority

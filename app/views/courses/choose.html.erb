@@ -1,0 +1,27 @@
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Where</th>
+  </tr>
+
+  <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.description %></td>
+        <td><%= course.where %></td>
+      </tr>
+  <% end %>
+</table>
+
+<%= form_tag mychoose_courses_path do %>
+      
+    <%= label_tag(:first, "Erste Wahl:") %>
+    <%= select_tag :first, options_from_collection_for_select(@courses, :id, :title, @courses[0].id) %>
+    <%= label_tag(:second, "zweite Wahl:") %>
+    <%= select_tag :second, options_from_collection_for_select(@courses, :id, :title, @courses[1].id) %>
+    <div class="form-actions">
+      <%= submit_tag("Wähle", class: "btn btn-primary") %>
+    </div>
+
+<% end %>
