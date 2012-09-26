@@ -4,7 +4,7 @@ class CreateChoosenCourses < ActiveRecord::Migration
       t.integer :course_id
       t.integer :student_id
       t.integer :priority
-      t.boolean :definitiv
+      t.boolean :definitiv, default: false
     end  end
 
   def down
