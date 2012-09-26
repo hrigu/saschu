@@ -1,10 +1,7 @@
 ActiveAdmin.register Student do
   index do
-    column :first_name do |student|
-      student.user.first_name
-    end
-    column :last_name do |student|
-      student.user.last_name
+    column :name do |s|
+      s.user.name
     end
     column :email do |student|
       student.user.email

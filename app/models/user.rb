@@ -22,5 +22,13 @@ class User < ActiveRecord::Base
     has_role? :administrator
   end
 
+  def is_parent?
+    has_role? :parent
+  end
+
+  def name
+    return [first_name, last_name].join " "
+  end
+
 
 end
