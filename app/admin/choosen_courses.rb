@@ -2,11 +2,12 @@ ActiveAdmin.register ChoosenCourse do
 
   batch_action :mache_definitiv do |selection|
     ChoosenCourse.find(selection).each do |cc|
-      cc.definitiv = true
+      cc.definitive = true
       cc.save
-      redirect_to collection_path, :notice => "definitiv  "
     end
+    redirect_to collection_path
   end
+
   scope :joined, :default => true do |cc|
     cc.includes [:course, :student]
   end
@@ -19,7 +20,7 @@ ActiveAdmin.register ChoosenCourse do
       cc.student.user.name
     end
     column :priority
-    column :definitiv
+    column :definitive
   end
 
 

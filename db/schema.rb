@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20120926121542) do
     t.integer "course_id"
     t.integer "student_id"
     t.integer "priority"
-    t.boolean "definitiv"
+    t.boolean "definitive", :default => false
   end
 
   create_table "courses", :force => true do |t|
