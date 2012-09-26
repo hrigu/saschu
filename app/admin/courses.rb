@@ -4,9 +4,10 @@ ActiveAdmin.register Course do
       link_to c.title, admin_course_path(c)
     end
     column :description
+    column :num_of_students
+    column :where
     column :class_min
     column :class_max
-    column :where
     column :name do |c|
       c.parent.user.name
     end

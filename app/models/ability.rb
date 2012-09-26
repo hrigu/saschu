@@ -10,6 +10,7 @@ class Ability
     elsif user.is_parent?
       can :new, Course if user.rolable.course.nil?
       can :update, Course
+      can :create, Course
       can :read, Course
       can :my, Course
     else

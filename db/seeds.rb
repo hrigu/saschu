@@ -104,13 +104,13 @@ class CourseCreator
   end
 end
 
-#puts 'SETTING UP School classes'
-#classes.each do |name|
-#  SchoolClass.create! name: name
-#end
+puts 'SETTING UP School classes'
+classes.each do |name|
+  SchoolClass.create! name: name
+end
 
 
-#UserCreator.new.create_user user_desc
+UserCreator.new.create_user user_desc
 CourseCreator.new.create_course course_desc
 
 
