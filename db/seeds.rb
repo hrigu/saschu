@@ -1,12 +1,8 @@
-puts 'SETTING UP School classes'
+# -*- encoding : utf-8 -*-
 
 classes = %w[1a 1b 1c 2a 2b 2c 3a 3b 3c 4a 4b 4c 5a 5b 5c 6a 6b 6c]
-classes.each do |name|
-  SchoolClass.create! name: name
-end
 
 
-puts 'SETTING UP DEFAULT USER LOGIN'
 user_desc = [
     {
         first_name: 'Christian',
@@ -27,6 +23,15 @@ user_desc = [
         }
     },
     {
+        first_name: 'Betti',
+        last_name: 'Bossi',
+        email: 'bb@gmail.com',
+        password: 'please',
+        role: {
+            type: :parent
+        }
+    },
+    {
         first_name: 'Benedikt',
         last_name: 'Muehlethaler',
         email: 'bene@gmail.com',
@@ -40,11 +45,24 @@ user_desc = [
             }
         }
     }
+]
 
+course_desc = [
+{
+    title: "Häkeln mit Pfiff",
+    description: "Tapfloppen für den Heimgebrauch",
+    num_of_students: 6,
+    class_min: 4,
+    class_max: 6,
+    where: "Zuhause",
+    chef: "maria.albisetti@gmail.com"
+}
 ]
 
 class UserCreator
   def create_user user_desc
+    puts 'SETTING UP DEFAULT USER LOGIN'
+
     user_desc.each do |u|
       role = u.delete(:role)
       u[:password_confirmation] = u[:password]
@@ -74,6 +92,25 @@ class UserCreator
   end
 end
 
-UserCreator.new.create_user user_desc
+class CourseCreator
+  def create_course course_desc
+    puts 'SETTING Courses'
+    course_desc.each do |c|
+      chef = c.delete :chef
+      course = Course.new c
+      course.parent = User.find_by_email(chef).rolable
+      course.save
+    end
+  end
+end
+
+#puts 'SETTING UP School classes'
+#classes.each do |name|
+#  SchoolClass.create! name: name
+#end
+
+
+#UserCreator.new.create_user user_desc
+CourseCreator.new.create_course course_desc
 
 
