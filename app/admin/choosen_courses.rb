@@ -8,10 +8,11 @@ ActiveAdmin.register ChoosenCourse do
     redirect_to collection_path
   end
 
-  scope :joined, :default => true do |cc|
-    cc.includes [:course, :student]
-  end
+  scope :assigned
+  scope :not_assigned
+
   index do
+
     selectable_column
     column :course do |cc|
       cc.course.title

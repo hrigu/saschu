@@ -5,9 +5,12 @@ class Course < ActiveRecord::Base
   has_many :choosen_courses
   has_many :students, :through => :choosen_courses
 
-
   def self.find_for_student student
     class_level = student.school_class.name.first.to_i
     Course.where("class_min <= :class_level AND class_max >= :class_level", {class_level: class_level})
+  end
+
+  def definitive_students
+    choosen_courses.where(:definitive => true)
   end
 end

@@ -22,8 +22,8 @@ ActiveAdmin.register Course do
       row :title
       row :description
       row :num_of_students
-      row "Students" do
-        table_for course.choosen_courses do |cc|
+      row "zugeteilte Anmeldungen" do
+        table_for course.definitive_students do |cc|
           column :name do |cc|
             link_to cc.student.user.name, admin_student_path(cc.student)
           end
@@ -31,7 +31,6 @@ ActiveAdmin.register Course do
             cc.student.user.email
           end
           column :priority
-          column :definitiv
         end
       end
     end
