@@ -4,6 +4,14 @@ class Student < ActiveRecord::Base
   belongs_to :school_class
   has_many :choosen_courses
   has_many :courses, :through => :choosen_courses
+
+  def definitive_course
+    choosen_courses.where(:definitive => true).limit(1).first
+  end
+
 #  has_and_belongs_to_many :courses
 
+  def to_s
+    user.name
+  end
 end

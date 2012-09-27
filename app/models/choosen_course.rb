@@ -25,4 +25,9 @@ class ChoosenCourse < ActiveRecord::Base
     definitive_students = definitive_students.empty? ? '' : definitive_students
     ChoosenCourse.where('student_id not in (?)', definitive_students)
   end
+
+  def to_s
+    course.title
+  end
+
 end

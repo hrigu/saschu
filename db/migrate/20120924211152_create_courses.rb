@@ -5,7 +5,7 @@ class CreateCourses < ActiveRecord::Migration
       t.text :description, :null => false
       t.integer :class_min, :null => false
       t.integer :class_max, :null => false
-      t.integer :num_of_students, :null => false
+      t.integer :capacity, :null => false
       t.string :where, :null => false
       t.references :parent, :null => false
       t.timestamps

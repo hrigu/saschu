@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.input :title, :autofocus => true, input_html: {class: "input-xlarge"}%>
     <%= f.input :description, input_html: {rows: 5, class: "input-xlarge"}%>
-    <%= f.input :num_of_students, selected: 6 %>
+    <%= f.input :capacity, selected: 6 %>
     <%= f.input :class_min, :collection => 1..6, selected: 1,  hint: "Für welche Klassen geeignet? " %>
     <%= f.input :class_max, :collection => 1..6, selected: 6 %>
     <%= f.input :where, input_html: {class: "input-xlarge"} %>

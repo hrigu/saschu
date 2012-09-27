@@ -9,10 +9,12 @@ ActiveAdmin.register Student do
     column :class_name do |student|
       student.school_class.name if student.school_class
     end
+    column :definitive_course
     column :age
     column :sex
 
-    default_actions
+
+#    default_actions
   end
 
   show do |student|
@@ -20,6 +22,7 @@ ActiveAdmin.register Student do
       row :name do
         student.user.name
       end
+      row :definitive_course
       row :choosen_courses do
         table_for student.choosen_courses do
 
@@ -30,6 +33,7 @@ ActiveAdmin.register Student do
             cc.course.description
           end
           column :priority
+          column :definitive
         end
       end
 

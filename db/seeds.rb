@@ -53,14 +53,59 @@ user_desc = [
                 class_name: "5c",
             }
         }
+    },
+    {
+        first_name: 'Judith',
+        last_name: 'Muehlethaler',
+        email: 'judith@gmail.com',
+        password: 'please',
+        role: {
+            type: :student,
+            values: {
+                sex: User::FEMALE,
+                age: 9,
+                class_name: "3c",
+            }
+        }
+    },
+    {
+        first_name: 'Paula',
+        last_name: 'Muehlethaler',
+        email: 'paula@gmail.com',
+        password: 'please',
+        role: {
+            type: :student,
+            values: {
+                sex: User::FEMALE,
+                age: 6,
+                class_name: "1a",
+            }
+        }
+    },
+    {
+        first_name: 'Fritz',
+        last_name: 'Fröhlich',
+        email: 'ff@gmail.com',
+        password: 'please',
+        role: {
+            type: :student,
+            values: {
+                sex: User::MALE,
+                age: 12,
+                class_name: "6b",
+            }
+        }
     }
+
+
+
 ]
 
 course_desc = [
     {
         title: "Häkeln mit Pfiff",
         description: "Topflappen für den Heimgebrauch",
-        num_of_students: 6,
+        capacity: 6,
         class_min: 4,
         class_max: 6,
         where: "Zuhause",
@@ -69,7 +114,7 @@ course_desc = [
     {
         title: "Kochen für Kinder",
         description: "Salzteigknusperli",
-        num_of_students: 22,
+        capacity: 22,
         class_min: 1,
         class_max: 4,
         where: "Küche",
@@ -78,7 +123,7 @@ course_desc = [
     {
         title: "Zimmer auf Hockglanz bringen",
         description: "Wir machen zuerst einen Saustall, dann putzen wir alles wieder",
-        num_of_students: 11,
+        capacity: 11,
         class_min: 1,
         class_max: 6,
         where: "Bei dir im Zimmer",
@@ -142,4 +187,8 @@ end
 UserCreator.new.create_user user_desc
 CourseCreator.new.create_course course_desc
 
+cc = ChoosenCourse.new(priority:1)
+cc.student = (User.find_by_first_name "Benedikt").rolable
+cc.course = (User.find_by_first_name "Meister").rolable.course
+cc.save
 

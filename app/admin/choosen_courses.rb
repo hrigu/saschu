@@ -8,14 +8,20 @@ ActiveAdmin.register ChoosenCourse do
     redirect_to collection_path
   end
 
+  scope :not_assigned, default: true
   scope :assigned
-  scope :not_assigned
 
   index do
 
     selectable_column
     column :course do |cc|
       cc.course.title
+    end
+    column :free_places do |cc|
+      cc.course.free_places
+    end
+    column :booked do |cc|
+      cc.course.booked
     end
     column :student_name do |cc|
       cc.student.user.name
