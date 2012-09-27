@@ -45,6 +45,6 @@ end
 
 group :production do
 #  gem "thin", ">= 1.4.1"
-  gem 'pg'
+  gem 'pg' #heroku requirement
 end
 

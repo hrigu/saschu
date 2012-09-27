@@ -9,7 +9,7 @@ class ChoosenCourse < ActiveRecord::Base
 
   scope :not_assigned, lambda {
     definitive_students = Student.uniq.joins(:choosen_courses).where("definitive = ?", true).pluck(:student_id)
-    definitive_students = definitive_students.empty? ? '' : definitive_students
+    definitive_students = definitive_students.empty? ? [-10] : definitive_students        #hack because the suggested '' does not work with pg on heroku
     where('student_id not in (?)', definitive_students)
   }
   scope :assigned, where(:definitive => true)
