@@ -1,9 +1,10 @@
 class Course < ActiveRecord::Base
-  attr_accessible :class_max, :class_min, :description, :title, :where, :capacity
+  attr_accessible :title, :description, :class_max, :class_min, :where, :capacity
   belongs_to :parent
-  #has_and_belongs_to_many :students
   has_many :choosen_courses
   has_many :students, :through => :choosen_courses
+  validates :title, :description, :class_max, :class_min, :where, :capacity, presence: true
+
 
   def self.find_for_student student
     class_level = student.school_class.name.first.to_i

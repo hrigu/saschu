@@ -21,14 +21,20 @@ de:
         school_class: "Klasse"
         age: "Alter"
         sex: "Geschlecht"
-
+        current_password: "Aktuelle Passwort"
+        title: "Titel"
+        description: "Beschreibung"
+        capacity: "Anzahl Schüler"
+        class_min: "Ab welcher Klasse"
+        class_max: "Bis welche Klasse"
+        where: "Findet wo statt"
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
+    hints:
+      defaults:
+        username: 'User name to sign in.'
+        password: 'Keine speziellen Zeichen bitte'
 

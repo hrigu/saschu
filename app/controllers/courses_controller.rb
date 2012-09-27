@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
     @course = Course.new(params[:course])
     @course.parent = current_user.rolable
     if @course.save
-      redirect_to @course, notice: 'Course was successfully created.'
+      redirect_to @course, notice: 'Kurs wurde erstellt. Danke!.'
     else
       render action: "new"
     end
@@ -46,7 +46,7 @@ class CoursesController < ApplicationController
   def update
     @course = Course.find(params[:id])
     if @course.update_attributes(params[:course])
-      redirect_to @course, notice: 'Course was successfully updated.'
+      redirect_to @course, notice: 'Kurs wurde aktualisiert'
     else
       render action: "edit"
     end
@@ -77,6 +77,8 @@ class CoursesController < ApplicationController
     end
   end
 
+
+
   def mychoose
     authorize! :mychoose, Course
 
@@ -98,7 +100,14 @@ class CoursesController < ApplicationController
       cc.student = current_user.rolable
       cc.save
     end
-    redirect_to root_path, notice: 'Kurse wurden gewählt'
+    if third.present?
+      course = Course.find(third.to_i)
+      cc = ChoosenCourse.new({priority: 3})
+      cc.course = course
+      cc.student = current_user.rolable
+      cc.save
+    end
+    redirect_to choose_courses_path, notice: 'Kurse wurden gewählt'
 
   end
 end
