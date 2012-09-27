@@ -1,33 +1,51 @@
-<p>
-  <b>Title:</b>
-  <%= @course.title %>
-</p>
+<h1>Dein Kurs</h1>
 
-<p>
-  <b>Description:</b>
-  <%= @course.description %>
-</p>
+<table class="table table-striped table-bordered">
 
-<p>
-  <b>Gruppengrösse:</b>
-  <%= @course.capacity %>
-</p>
+  <tr>
+    <td><b>Titel:</b></td>
+    <td><%= @course.title %></td>
+  </tr>
+  <tr>
+    <td><b>Beschreibung:</b></td>
+    <td><%= @course.description %></td>
+  </tr>
+  <tr>
+    <td><b>Wo:</b></td>
+    <td>  <%= @course.where %></td>
+  </tr>
+  <tr>
+    <td><b>Kapazität:</b></td>
+    <td>  <%= @course.capacity %></td>
+  </tr>
+  <tr>
+    <td><b>Für Welche Klassen</b></td>
+    <td><%= @course.class_min %> - <%= @course.class_max %> Klasse</td>
+  </tr>
+</table>
 
-<p>
-  <b>Class min:</b>
-  <%= @course.class_min %>
-</p>
+<div class="well">
+  Definitiv angemolden haben sich:
+</div>
 
-<p>
-  <b>Class max:</b>
-  <%= @course.class_max %>
-</p>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Name</th>
+    <th>Klasse</th>
+    <th>Email</th>
+  </tr>
 
-<p>
-  <b>Where:</b>
-  <%= @course.where %>
-</p>
+  <% @course.definitive_students.each do |ds| %>
+      <tr>
+        <td><%= ds.student.user.name %></td>
+        <td><%= ds.student.school_class.name%></td>
+        <td><%= ds.student.user.email %></td>
+      </tr>
+  <% end %>
+</table>
+
+
 
 
 <%= link_to 'editieren...', edit_course_path(@course) %> |
-<%= link_to 'löschen...', @course, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'löschen...', @course, method: :delete, data: {confirm: 'Are you sure?'} %>

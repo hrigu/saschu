@@ -8,11 +8,11 @@ class Ability
     if user.is_admin?
       can :manage, :all
     elsif user.is_parent?
-      can :new, Course if user.rolable.course.nil?
-      can :update, Course
-      can :create, Course
-      can :read, Course
-      can :my, Course
+      can [:new, :create], Course if user.rolable.course.nil?
+      can [:update, :my], Course do |course|
+        course.parent.user.id == user.id
+      end
+      can :read, :all
     elsif user.is_student?
       can :choose, Course
       can :mychoose, Course
