@@ -5,7 +5,6 @@ gem 'rails', '3.2.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem "devise", ">= 2.1.2"
@@ -29,6 +28,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'hirb' # nice layout for activeRecords on the console use after  typing 'Hirb.enable'
   gem "rspec-rails", ">= 2.11.0"
   gem "factory_girl_rails", ">= 4.0.0"
