@@ -140,6 +140,7 @@ class UserCreator
       role = u.delete(:role)
       u[:password_confirmation] = u[:password]
       user = User.create! u
+      user.confirm!
       add_role(user, role)
       puts 'New user created: ' << user.first_name
     end
