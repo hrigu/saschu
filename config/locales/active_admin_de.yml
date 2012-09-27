@@ -1,0 +1,5 @@
+de:
+#vieles ist schon übersetzt, siehe active_admin
+  active_admin:
+    batch_actions:
+      button_label: "batch"

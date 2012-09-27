@@ -1,0 +1,10 @@
+de:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "Es gibt schon einen Benutzer mit dieser Emailadresse!"
+            password:
+              confirmation: "Das Passwort muss zweimal gleich angegeben werden"

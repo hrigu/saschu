@@ -6,10 +6,10 @@
           <li><%= link_to "Wähle Kurse", choose_courses_path %></li>
       <% end %>
       <% if current_user.has_role? :parent %>
-          <li><%= link_to "my_course", my_courses_path %></li>
+          <li><%= link_to "Meine Kurse", my_courses_path %></li>
       <% end %>
       <% if current_user.is_admin? %>
-          <li><%= link_to "admin", admin_root_path %></li>
+          <li><%= link_to "Admin", admin_root_path %></li>
       <% end %>
 
     </ul>
