@@ -62,7 +62,19 @@ class CoursesController < ApplicationController
   def choose
     authorize! :choose, Course
 
-    @courses = Course.find_for_student current_user.rolable
+    student = current_user.rolable
+    if student.definitive_course
+      @choosen_course = student.definitive_course
+      render :show_definitive_course
+    else
+      @choosen_courses = student.choosen_courses
+      unless @choosen_courses.empty?
+        render :show_choosen_courses
+      else
+        @courses = Course.find_for_student student
+      end
+
+    end
   end
 
   def mychoose

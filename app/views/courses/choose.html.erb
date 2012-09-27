@@ -1,3 +1,25 @@
+<% if !@choosen_courses.empty? %>
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>Definitive</th>
+        <th>Priority</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Where</th>
+      </tr>
+
+      <% @choosen_courses.each do |cc| %>
+          <tr>
+            <td><%= cc.definitive %></td>
+            <td><%= cc.priority %></td>
+            <td><%= cc.course.title %></td>
+            <td><%= cc.course.description %></td>
+            <td><%= cc.course.where %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
+
 <table class="table table-striped table-bordered">
   <tr>
     <th>Title</th>
@@ -14,8 +36,7 @@
   <% end %>
 </table>
 
-<%= form_tag mychoose_courses_path do %>
-      
+<%= form_tag mychoose_courses_path do %>      
     <%= label_tag(:first, "Erste Wahl:") %>
     <%= select_tag :first, options_from_collection_for_select(@courses, :id, :title, @courses[0].id) %>
     <%= label_tag(:second, "zweite Wahl:") %>

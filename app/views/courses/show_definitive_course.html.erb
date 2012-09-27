@@ -1,0 +1,29 @@
+<div class="well">
+  Das ist dein Saschu Kurs:
+</div>
+
+
+
+<table class="table table-striped table-bordered">
+
+  <tr>
+    <td><b>Titel:</b></td>
+    <td><%= @choosen_course.course.title %></td>
+  </tr>
+  <tr>
+    <td><b>Beschreibung:</b></td>
+    <td><%= @choosen_course.course.description %></td>
+  </tr>
+  <tr>
+    <td><b>Wo:</b></td>
+    <td>  <%= @choosen_course.course.where %></td>
+  </tr>
+  <tr>
+    <td><b>Leitung:</b></td>
+    <td>  <%= @choosen_course.course.parent.user.name %></td>
+  </tr>
+  <tr>
+    <td><b>Email:</b></td>
+    <td>  <%= @choosen_course.course.parent.user.email %></td>
+  </tr>
+</table>
