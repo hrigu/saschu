@@ -1,5 +1,6 @@
 ActiveAdmin.register Parent do
   index do
+    column :id
     column :name do |parent|
       parent.user.name
     end

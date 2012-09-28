@@ -2,24 +2,22 @@
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-
     <div class="form-inputs">
-      <%= f.input :role, collection: [["Schüler", "student"], ["Eltern", "parent"]], as: :radio_buttons, checked: "student" %>
       <%= f.input :first_name, :required => true, :autofocus => true %>
       <%= f.input :last_name, :required => true %>
-
-      <%# wird nur fuer Studenten angezeigt %>
-      <div class="student_part">
-        <%= f.simple_fields_for :rolable do |s| %>
-            <%= s.input :school_class, collection: SchoolClass.all, selected: SchoolClass.first %>
-            <%= s.input :age, :collection => 6..15, selected: 8 %>
-            <%= s.input :sex, collection: [["Mädchen", User::FEMALE], ["Junge", User::MALE]], as: :radio_buttons, checked: User::FEMALE %>
-        <% end %>
-      </div>
-
       <%= f.input :email, :required => true %>
       <%= f.input :password, :required => true %>
       <%= f.input :password_confirmation, :required => true %>
+      <% if State.state_is_kurse_buchen? %>
+          <%# wird nur fuer Studenten angezeigt %>
+          <div class="student_part">
+            <%= f.simple_fields_for :student do |s| %>
+                <%= s.input :school_class, collection: SchoolClass.all, selected: SchoolClass.first %>
+                <%= s.input :age, :collection => 6..15, selected: 8 %>
+                <%= s.input :sex, collection: [["Mädchen", User::FEMALE], ["Junge", User::MALE]], as: :radio_buttons, checked: User::FEMALE %>
+            <% end %>
+          </div>
+      <% end %>
 
     </div>
 
