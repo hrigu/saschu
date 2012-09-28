@@ -6,6 +6,7 @@ de:
           attributes:
             email:
               taken: "Es gibt schon einen Benutzer mit dieser Emailadresse!"
+              invalid: "Das Email kann so nicht stimmen"
             password:
               confirmation: "Das Passwort muss zweimal gleich angegeben werden"
             current_password:
