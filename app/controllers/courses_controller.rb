@@ -77,8 +77,6 @@ class CoursesController < ApplicationController
     end
   end
 
-
-
   def mychoose
     authorize! :mychoose, Course
 

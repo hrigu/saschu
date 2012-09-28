@@ -1,7 +1,7 @@
 ActiveAdmin.register Student do
   index do
     column :name do |s|
-      s.user.name
+      s.user.nil? ? "unbekannt" : s.user.name
     end
     column :email do |student|
       student.user.email
