@@ -1,18 +1,25 @@
 <% if State.state_is_kurse_eingeben? %>
-    <p class="lead">
-      Schön dass du einen Kurs anbieten möchtest! <br>
-      Das sind deine ersten Schritte:
-    <ul>
-      <li>Bitte registriere dich hier: <%= link_to "registrieren...", new_user_registration_path %></li>
-      <li>Beschreibe deinen Kurs</li>
-      <li>Warten...bis die Schüler deinem Kurs zugeteilt sind.</li>
-      <li>Den Kurs durchführen!</li>
-    </ul>
+    <% if user_signed_in? %>
+        <p class="lead">
+          Hallo <strong> <%= current_user.name %> </strong>
+          Hier kommst du zum Kurs: <%= link_to "Dein Kurs", my_courses_path %>
+        </p>
+    <% else %>
+        <p class="lead">
+          Schön dass du einen Kurs anbieten möchtest! <br>
+          Das sind deine ersten Schritte:
+        <ul>
+          <li>Bitte registriere dich hier: <%= link_to "registrieren...", new_user_registration_path %></li>
+          <li>Beschreibe deinen Kurs</li>
+          <li>Warten...bis die Schüler deinem Kurs zugeteilt sind.</li>
+          <li>Den Kurs durchführen!</li>
+        </ul>
 
-    </p>
+        </p>
+    <% end %>
 <% else %>
     <p class="lead">
-      Hallo.  <br>
+      Hallo. <br>
       Die Zeit zum Kurse anbieten ist abgelaufen. Nächstes Jahr wieder bestimmt! <br>
       Wenn du einen Kurs anbietest, so kannst du dich einloggen um auf deine Kursseite zu kommen.
       <%= link_to "login", new_user_session_path %>

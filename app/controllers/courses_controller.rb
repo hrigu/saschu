@@ -15,9 +15,9 @@ class CoursesController < ApplicationController
 
   def my
     unless current_user.rolable.course
-      redirect_to new_course_path
+      redirect_to new_course_path, flash: flash
     else
-      redirect_to course_path(current_user.rolable.course)
+      redirect_to course_path(current_user.rolable.course), flash: flash
     end
   end
 

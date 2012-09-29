@@ -48,7 +48,7 @@
 
 <% if State.state_is_kurse_eingeben? %>
     <div class="well">
-      Komm später wieder mal vorbei, dann siehst du wer sich für deinen Kurs angemolden hat.
+      Komm später wieder mal vorbei, dann siehst du welche Schüler diesem Kurs zugeteilt wurden.
     </div>
     <%= link_to 'editieren...', edit_course_path(@course) %> |
     <%= link_to 'löschen...', @course, method: :delete, data: {confirm: 'Wills du den Kurs wirklich löschen?'} %>

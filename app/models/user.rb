@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
-         :validatable, #password_length: See config/initializers/devisec.rb
-         :confirmable
+         :validatable #password_length: See config/initializers/devisec.rb
+         #:confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :age

@@ -9,7 +9,7 @@
       <%= f.input :password, :required => true %>
       <%= f.input :password_confirmation, :required => true %>
       <% if State.state_is_kurse_buchen? %>
-          <%# wird nur fuer Studenten angezeigt %>
+          <%# wird nur fuer Schüler angezeigt %>
           <div class="student_part">
             <%= f.simple_fields_for :student do |s| %>
                 <%= s.input :school_class, collection: SchoolClass.all, selected: SchoolClass.first %>
