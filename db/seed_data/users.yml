@@ -1,0 +1,71 @@
+---
+- :first_name: Christian
+  :last_name: Muehlethaler
+  :email: chmuehlethaler@freesurf.ch
+  :password: please
+  :role:
+    :type: :administrator
+- :first_name: Meieli
+  :last_name: Albisetti
+  :email: maria.albisetti@gmail.com
+  :password: please
+  :role:
+    :type: :parent
+- :first_name: Betti
+  :last_name: Bossi
+  :email: bb@gmail.com
+  :password: please
+  :role:
+    :type: :parent
+- :first_name: Meister
+  :last_name: Propper
+  :email: mp@gmail.com
+  :password: please
+  :role:
+    :type: :parent
+- :first_name: Ficht
+  :last_name: Tanner
+  :email: ft@gmail.com
+  :password: please
+  :role:
+    :type: :parent
+- :first_name: Benedikt
+  :last_name: Muehlethaler
+  :email: bene@gmail.com
+  :password: please
+  :role:
+    :type: :student
+    :values:
+      :sex: 0
+      :age: 11
+      :class_name: 5c
+- :first_name: Judith
+  :last_name: Muehlethaler
+  :email: judith@gmail.com
+  :password: please
+  :role:
+    :type: :student
+    :values:
+      :sex: 1
+      :age: 9
+      :class_name: 3c
+- :first_name: Paula
+  :last_name: Muehlethaler
+  :email: paula@gmail.com
+  :password: please
+  :role:
+    :type: :student
+    :values:
+      :sex: 1
+      :age: 6
+      :class_name: 1a
+- :first_name: Fritz
+  :last_name: Fröhlich
+  :email: ff@gmail.com
+  :password: please
+  :role:
+    :type: :student
+    :values:
+      :sex: 0
+      :age: 12
+      :class_name: 6b

@@ -1,0 +1,22 @@
+---
+- :title: Häkeln mit Pfiff
+  :description: Topflappen für den Heimgebrauch
+  :capacity: 6
+  :class_min: 4
+  :class_max: 6
+  :where: Zuhause
+  :parent: maria.albisetti@gmail.com
+- :title: Kochen für Kinder
+  :description: Salzteigknusperli
+  :capacity: 22
+  :class_min: 1
+  :class_max: 4
+  :where: Küche
+  :parent: bb@gmail.com
+- :title: Zimmer auf Hockglanz bringen
+  :description: Wir machen zuerst einen Saustall, dann putzen wir alles wieder
+  :capacity: 11
+  :class_min: 1
+  :class_max: 6
+  :where: Bei dir im Zimmer
+  :parent: mp@gmail.com

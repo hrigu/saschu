@@ -1,26 +1,4 @@
-<h1>Alle Kurse</h1>
+<h3>Alle Kurse</h3>
 
-<table class="table table-striped table-bordered">
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-
-    <th>Gruppengrösse</th>
-    <th>Klassen</th>
-    <th>Where</th>
-    <th>Leitung</th>
-  </tr>
-
-  <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.title %></td>
-        <td><%= course.description %></td>
-        <td><%= course.capacity %></td>
-        <td><%= course.class_min %> - <%= course.class_max %> </td>
-        <td><%= course.where %></td>
-        <td><%= course.parent.user.name %></td>
-      </tr>
-  <% end %>
-</table>
-
+<%= render partial: "list" %>
 <br/>
