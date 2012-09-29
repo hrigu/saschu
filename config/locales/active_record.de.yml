@@ -1,6 +1,8 @@
 de:
   activerecord:
     errors:
+      messages:
+        blank: "Feld darf nicht leer sein"
       models:
         user:
           attributes:

@@ -36,5 +36,5 @@ de:
     hints:
       defaults:
         username: 'User name to sign in.'
-        password: 'Keine speziellen Zeichen bitte'
+        #password: 'Keine speziellen Zeichen bitte'
 

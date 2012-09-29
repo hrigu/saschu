@@ -6,9 +6,5 @@ class CreateStates < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    State.create! name: State::KURSE_EINGEBEN, active: true
-    State.create! name: State::KURSE_BUCHEN, active: false
-
   end
 end

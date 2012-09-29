@@ -193,3 +193,7 @@ cc.student = (User.find_by_first_name "Benedikt").rolable
 cc.course = (User.find_by_first_name "Meister").rolable.course
 cc.save
 
+State.create! name: State::KURSE_EINGEBEN, active: true
+State.create! name: State::KURSE_BUCHEN, active: false
+
+

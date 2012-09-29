@@ -13,7 +13,7 @@ en:
     # Labels and hints examples
     labels:
       defaults:
-       password: 'Passworddd'
+       password: 'Password'
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'

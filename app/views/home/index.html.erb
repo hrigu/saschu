@@ -1,8 +1,35 @@
-<h1>Willkommen auf Saschu!</h1>
+<h2>Willkommen auf Saschu!</h2>
 
-<p>
-  Bitte logge dich ein oder registriere dich. Die entsprechenden Links findest du oben rechts.
-</p>
-<p>
-  Danach kannst du einen Kursbeschrieb einstellen oder deinen Kurs editieren, beziehungsweise für einen Kurs anmelden.
-</p>
+
+<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+  <li><a href="#student" data-toggle="tab">Schüler</a></li>
+  <li><a href="#parent" data-toggle="tab">Eltern</a></li>
+  <li><a href="#teacher" data-toggle="tab">Lehrer</a></li>
+</ul>
+
+<div id="my-tab-content" class="tab-content">
+  <div class="tab-pane active" id="home">
+    <p class="lead">
+      Saschu: Samstagsschule von Eltern für die Schüler des Pestalozzischulhauses. <br>
+      Einmal pro Jahr bieten Eltern den Kindern das an, was sie selber am liebsten als Schüler hätten.
+      <br>
+      Der nächste Kurs findet am <strong>Freitag Vormittag am 10. Mai 2012 (TODO: korrektes Datum eintragen)</strong> statt
+    </p>
+
+    <p class="lead">
+      Mehr Infos findest du im entsprechenden Tab.
+    </p>
+  </div>
+  <div class="tab-pane" id="student">
+    <%= render partial: "student_content" %>
+  </div>
+  <div class="tab-pane" id="parent">
+    <%= render partial: "parent_content" %>
+  </div>
+  <div class="tab-pane" id="teacher">
+    <p class="lead">
+      Die haben frei...
+    </p>
+  </div>
+</div>

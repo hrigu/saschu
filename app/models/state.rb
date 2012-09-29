@@ -16,4 +16,15 @@ class State < ActiveRecord::Base
     self.active_state_name == KURSE_BUCHEN
   end
 
+  #works only if it has two states
+  def self.toggle
+    all = State.all
+    raise "more than two states" unless all.size == 2
+    all.each do |s|
+      s.active = !s.active
+      s.save
+    end
+
+  end
+
 end

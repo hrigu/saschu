@@ -1,0 +1,20 @@
+<% if State.state_is_kurse_eingeben? %>
+    <p class="lead">
+      Schön dass du einen Kurs anbieten möchtest! <br>
+      Das sind deine ersten Schritte:
+    <ul>
+      <li>Bitte registriere dich hier: <%= link_to "registrieren...", new_user_registration_path %></li>
+      <li>Beschreibe deinen Kurs</li>
+      <li>Warten...bis die Schüler deinem Kurs zugeteilt sind.</li>
+      <li>Den Kurs durchführen!</li>
+    </ul>
+
+    </p>
+<% else %>
+    <p class="lead">
+      Hallo.  <br>
+      Die Zeit zum Kurse anbieten ist abgelaufen. Nächstes Jahr wieder bestimmt! <br>
+      Wenn du einen Kurs anbietest, so kannst du dich einloggen um auf deine Kursseite zu kommen.
+      <%= link_to "login", new_user_session_path %>
+    </p>
+<% end %>
