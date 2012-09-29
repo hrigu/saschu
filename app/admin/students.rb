@@ -11,7 +11,6 @@ ActiveAdmin.register Student do
     end
     column :definitive_course
     column :age
-    column :sex
 
 
 #    default_actions

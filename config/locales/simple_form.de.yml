@@ -20,7 +20,6 @@ de:
         last_name: "Nachname"
         school_class: "Klasse"
         age: "Alter"
-        sex: "Geschlecht"
         current_password: "Aktuelle Passwort"
         title: "Titel"
         description: "Beschreibung"

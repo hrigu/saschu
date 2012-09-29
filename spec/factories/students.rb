@@ -3,6 +3,5 @@
 FactoryGirl.define do
   factory :student do
     age 1
-    sex 1
   end
 end

@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(:version => 20120928205707) do
 
   create_table "students", :force => true do |t|
     t.integer  "age"
-    t.integer  "sex"
     t.integer  "school_class_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false

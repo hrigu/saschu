@@ -5,9 +5,9 @@
   :password: please
   :role:
     :type: :administrator
-- :first_name: Meieli
-  :last_name: Albisetti
-  :email: maria.albisetti@gmail.com
+- :first_name: Mechthold
+  :last_name: Meyer
+  :email: mm@gmail.com
   :password: please
   :role:
     :type: :parent
@@ -29,6 +29,24 @@
   :password: please
   :role:
     :type: :parent
+- :first_name: Markus
+  :last_name: Meier
+  :email: mame@gmail.com
+  :password: please
+  :role:
+    :type: :parent
+- :first_name: Simon
+  :last_name: Flieger
+  :email: sf@gmail.com
+  :password: please
+  :role:
+    :type: :parent
+- :first_name: Franz
+  :last_name: Fröhlich
+  :email: ff@gmail.com
+  :password: please
+  :role:
+    :type: :parent
 - :first_name: Benedikt
   :last_name: Muehlethaler
   :email: bene@gmail.com
@@ -36,7 +54,6 @@
   :role:
     :type: :student
     :values:
-      :sex: 0
       :age: 11
       :class_name: 5c
 - :first_name: Judith
@@ -46,7 +63,6 @@
   :role:
     :type: :student
     :values:
-      :sex: 1
       :age: 9
       :class_name: 3c
 - :first_name: Paula
@@ -56,16 +72,14 @@
   :role:
     :type: :student
     :values:
-      :sex: 1
       :age: 6
       :class_name: 1a
 - :first_name: Fritz
   :last_name: Fröhlich
-  :email: ff@gmail.com
+  :email: frfr@gmail.com
   :password: please
   :role:
     :type: :student
     :values:
-      :sex: 0
       :age: 12
       :class_name: 6b

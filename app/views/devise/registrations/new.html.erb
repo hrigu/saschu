@@ -14,7 +14,6 @@
             <%= f.simple_fields_for :student do |s| %>
                 <%= s.input :school_class, collection: SchoolClass.all, selected: SchoolClass.first %>
                 <%= s.input :age, :collection => 6..15, selected: 8 %>
-                <%= s.input :sex, collection: [["Mädchen", User::FEMALE], ["Junge", User::MALE]], as: :radio_buttons, checked: User::FEMALE %>
             <% end %>
           </div>
       <% end %>

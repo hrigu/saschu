@@ -36,6 +36,7 @@ end
 class CourseCreator
   def create_course course_desc
     course_desc.each do |c|
+      puts 'create ' << c[:title]
       parent = c.delete :parent
       course = Course.new c
       course.parent = User.find_by_email(parent).rolable
@@ -56,6 +57,7 @@ seed_data_root = "#{Rails.root.to_s}/db/seed_data"
 user_desc = YAML::load(File.open("#{seed_data_root}/users.yml"))
 course_desc = YAML::load(File.open("#{seed_data_root}/courses.yml"))
 classes = %w[1a 1b 1c 2a 2b 2c 3a 3b 3c 4a 4b 4c 5a 5b 5c 6a 6b 6c]
+
 
 puts 'SETTING UP School classes'
 classes.each do |name|

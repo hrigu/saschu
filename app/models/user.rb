@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
          :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :age, :sex
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :age
 
   belongs_to :rolable, :polymorphic => true
 
