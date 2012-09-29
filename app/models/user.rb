@@ -35,5 +35,9 @@ class User < ActiveRecord::Base
     return [first_name, last_name].join " "
   end
 
+  def self.all_not_confirmed
+    User.where("confirmed_at is NULL")
+  end
+
 
 end

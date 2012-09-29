@@ -3,7 +3,7 @@
 class CoursesController < ApplicationController
 
   #can_can
-  load_and_authorize_resource except: [:choose, :mychoose]  #cancan
+  load_and_authorize_resource except: [:choose, :mychoose] #cancan
 
   # GET /courses
   def index
@@ -55,8 +55,10 @@ class CoursesController < ApplicationController
 # DELETE /courses/1
   def destroy
     @course = Course.find(params[:id])
-    @course.destroy
-    redirect_to courses_url
+    if (@course.destroy)
+      redirect_to courses_url, notice: 'Der Kurs wurde gelöscht. Leider! Du kannst wieder einen erstellen...'
+
+    end
   end
 
   def choose

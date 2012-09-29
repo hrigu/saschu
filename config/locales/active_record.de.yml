@@ -1,5 +1,13 @@
 de:
   activerecord:
+    models:
+      course: "Kurs"
+      parent: "Kursleiter"
+      student: "Schüler"
+      choosen_course: "Gewählter Kurs"
+      school_class: "Schulklasse"
+      user: "Benutzer"
+      state: "Status"
     errors:
       messages:
         blank: "Feld darf nicht leer sein"

@@ -1,4 +1,4 @@
-<h1>Dein Kurs</h1>
+<h3>Dein Kurs</h3>
 
 <table class="table table-striped table-bordered">
 
@@ -24,28 +24,32 @@
   </tr>
 </table>
 
-<div class="well">
-  Definitiv angemolden haben sich:
-</div>
+<% if State.state_is_kurse_buchen? %>
+    <div class="well">
+      Definitiv angemolden haben sich:
+    </div>
 
-<table class="table table-striped table-bordered">
-  <tr>
-    <th>Name</th>
-    <th>Klasse</th>
-    <th>Email</th>
-  </tr>
-
-  <% @course.definitive_students.each do |ds| %>
+    <table class="table table-striped table-bordered">
       <tr>
-        <td><%= ds.student.user.name %></td>
-        <td><%= ds.student.school_class.name%></td>
-        <td><%= ds.student.user.email %></td>
+        <th>Name</th>
+        <th>Klasse</th>
+        <th>Email</th>
       </tr>
-  <% end %>
-</table>
 
+      <% @course.definitive_students.each do |ds| %>
+          <tr>
+            <td><%= ds.student.user.name %></td>
+            <td><%= ds.student.school_class.name %></td>
+            <td><%= ds.student.user.email %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
 
-
-
-<%= link_to 'editieren...', edit_course_path(@course) %> |
-<%= link_to 'löschen...', @course, method: :delete, data: {confirm: 'Are you sure?'} %>
+<% if State.state_is_kurse_eingeben? %>
+    <div class="well">
+      Komm später wieder mal vorbei, dann siehst du wer sich für deinen Kurs angemolden hat.
+    </div>
+    <%= link_to 'editieren...', edit_course_path(@course) %> |
+    <%= link_to 'löschen...', @course, method: :delete, data: {confirm: 'Wills du den Kurs wirklich löschen?'} %>
+<% end %>

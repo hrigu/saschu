@@ -35,6 +35,10 @@ de:
     #       email: 'E-mail.'
     hints:
       defaults:
-        username: 'User name to sign in.'
+        username: 'Benutzername um sich anzumelden.'
         #password: 'Keine speziellen Zeichen bitte'
+  helpers:
+    submit:
+        update: "aktualisiere %{model}"
+        create: "erstelle %{model}"
 

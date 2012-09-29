@@ -14,7 +14,7 @@ user_desc = [
         }
     },
     {
-        first_name: 'Maria',
+        first_name: 'Meieli',
         last_name: 'Albisetti',
         email: 'maria.albisetti@gmail.com',
         password: 'please',
@@ -35,6 +35,15 @@ user_desc = [
         first_name: 'Meister',
         last_name: 'Propper',
         email: 'mp@gmail.com',
+        password: 'please',
+        role: {
+            type: :parent
+        }
+    },
+    {
+        first_name: 'Ficht',
+        last_name: 'Tanner',
+        email: 'ft@gmail.com',
         password: 'please',
         role: {
             type: :parent

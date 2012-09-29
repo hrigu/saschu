@@ -41,15 +41,15 @@ ActiveRecord::Schema.define(:version => 20120928205707) do
   end
 
   create_table "courses", :force => true do |t|
-    t.string   "title",       :null => false
-    t.text     "description", :null => false
-    t.integer  "class_min",   :null => false
-    t.integer  "class_max",   :null => false
-    t.integer  "capacity",    :null => false
-    t.string   "where",       :null => false
-    t.integer  "parent_id",   :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "title",                       :null => false
+    t.text     "description",                 :null => false
+    t.integer  "class_min",   :default => 1,  :null => false
+    t.integer  "class_max",   :default => 6,  :null => false
+    t.integer  "capacity",    :default => 10, :null => false
+    t.string   "where",                       :null => false
+    t.integer  "parent_id",                   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "parents", :force => true do |t|

@@ -9,7 +9,7 @@ class Ability
       can :manage, :all
     elsif user.is_parent?
       can [:new, :create], Course if user.rolable.course.nil?
-      can [:update, :my], Course do |course|
+      can [:update, :my, :destroy], Course do |course|
         course.parent.user.id == user.id
       end
       can :read, :all
