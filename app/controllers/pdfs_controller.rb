@@ -2,6 +2,7 @@
 
 require "prawn"
 class PdfsController < ApplicationController
+
   # Generates a PDF document with information on the client and
   # returns it. The user will get the PDF as a file download.
   def courses
@@ -15,7 +16,7 @@ class PdfsController < ApplicationController
 
   def generate_pdf()
     pdf_data = []
-    pdf_data << %w[id, Name Beschreibung Wo Kapa Klassen Wer]
+    pdf_data << %w[id Name Beschreibung Wo Kapa Klassen Leitung]
 
     Course.find_each do |course|
       pdf_data << [course.id, course.title, course.description, course.where, course.capacity, course.class_min_max, course.parent.user.name]
