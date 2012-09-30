@@ -14,6 +14,10 @@ ActiveAdmin.register SchoolClass do
           column :email do |student|
             student.user.email
           end
+          column :definitiver_kurs do |student|
+            dc = student.definitive_course
+            link_to(dc.course.title, admin_course_path(dc.course)) if student.definitive_course
+          end
         end
       end      
     end

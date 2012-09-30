@@ -1,4 +1,7 @@
 ActiveAdmin.register Course do
+
+  actions :all, except: [:new]
+
   index do |course|
     column :title do |c|
       link_to c.title, admin_course_path(c)

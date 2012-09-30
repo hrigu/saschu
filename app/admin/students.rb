@@ -9,7 +9,10 @@ ActiveAdmin.register Student do
     column :class_name do |student|
       student.school_class.name if student.school_class
     end
-    column :definitive_course
+    column :definitive_course do |student|
+      definitive_course = student.definitive_course
+      link_to(definitive_course.course.title, admin_course_path(definitive_course)) if definitive_course
+    end
     column :age
 
 
@@ -21,12 +24,16 @@ ActiveAdmin.register Student do
       row :name do
         student.user.name
       end
-      row :definitive_course
+      row :school_class
+      row :definitive_course do
+        dc = student.definitive_course
+        link_to(dc.course.title, admin_course_path(dc.course)) if student.definitive_course
+      end
       row :choosen_courses do
         table_for student.choosen_courses do
 
           column :title do |cc|
-            cc.course.title
+            link_to(cc.course.title, admin_course_path(cc.course))
           end
           column :description do |cc|
             cc.course.description

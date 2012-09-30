@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+  actions :all, except: [:new]
 
   filter :first_name
   filter :email
