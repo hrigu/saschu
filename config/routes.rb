@@ -9,6 +9,7 @@ Saschu::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get "user_registrations/create"
+  get "pdfs/courses"
 
   devise_for :users, controllers: {registrations: 'UserRegistrations'}
   root :to => "home#index"

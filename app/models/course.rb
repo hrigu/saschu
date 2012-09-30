@@ -28,4 +28,8 @@ class Course < ActiveRecord::Base
     definitive_students.count
   end
 
+  def class_min_max
+    "#{class_min} - #{class_max}"
+  end
+
 end
