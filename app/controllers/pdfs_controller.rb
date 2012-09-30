@@ -27,7 +27,8 @@ class PdfsController < ApplicationController
       pdf.move_down(10)
       pdf.text "Alle Kurse", style: :bold, size: 24
 
-      pdf.text "Erstellt am #{l Time.now}", align: :right
+      # Timezones in Rails: http://danilenko.org/2012/7/6/rails_timezones/
+      pdf.text "Erstellt am #{l Time.zone.now}", align: :right
 
       pdf.move_down(10)
 
