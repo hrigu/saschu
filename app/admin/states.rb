@@ -10,4 +10,9 @@ ActiveAdmin.register State do
   action_item :only => :index do
     link_to('toggle', action: :toggle)
   end
+
+  index do
+    column :name
+    column :active
+  end
 end
