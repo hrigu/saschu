@@ -1,4 +1,19 @@
 ActiveAdmin.register Student do
+
+  form do |f|
+    f.inputs "details" do
+      f.input :school_class
+      f.input :school_class
+      f.fields_for :user do |user|
+        user.input :first_name
+        user.input :last_name
+        #user.input :last_name
+      end
+    end
+    f.buttons
+  end
+
+
   index do
     column :name do |s|
       s.user.nil? ? "unbekannt" : s.user.name

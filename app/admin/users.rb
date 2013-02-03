@@ -1,5 +1,17 @@
 ActiveAdmin.register User do
-  actions :all, except: [:new]
+
+  form do |f|
+    f.inputs "details" do
+      f.input :first_name
+      f.input :last_name
+      f.input :email
+
+    end
+    f.buttons
+  end
+
+
+  #actions :all, except: [:new]
 
   filter :first_name
   filter :email
@@ -11,7 +23,6 @@ ActiveAdmin.register User do
     column :email
     column :rolable_type, :dependent => :delete
   end
-
 
 
 end
