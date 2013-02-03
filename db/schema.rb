@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928205707) do
+ActiveRecord::Schema.define(:version => 20130203145326) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -41,15 +41,20 @@ ActiveRecord::Schema.define(:version => 20120928205707) do
   end
 
   create_table "courses", :force => true do |t|
-    t.string   "title",                       :null => false
-    t.text     "description",                 :null => false
-    t.integer  "class_min",   :default => 1,  :null => false
-    t.integer  "class_max",   :default => 6,  :null => false
-    t.integer  "capacity",    :default => 10, :null => false
-    t.string   "where",                       :null => false
-    t.integer  "parent_id",                   :null => false
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.string   "title",                             :null => false
+    t.text     "description",                       :null => false
+    t.integer  "class_min",         :default => 1,  :null => false
+    t.integer  "class_max",         :default => 6,  :null => false
+    t.integer  "capacity",          :default => 10, :null => false
+    t.string   "where",                             :null => false
+    t.integer  "parent_id",                         :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.integer  "expence"
+    t.boolean  "payroll_form"
+    t.string   "children_material"
+    t.string   "material"
+    t.string   "notes_for_path"
   end
 
   create_table "parents", :force => true do |t|

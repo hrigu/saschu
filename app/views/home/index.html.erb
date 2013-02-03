@@ -3,16 +3,12 @@
 
 <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
   <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-  <li><a href="#student" data-toggle="tab">Schüler</a></li>
-  <li><a href="#parent" data-toggle="tab">Eltern</a></li>
+  <li><a href="#parent" data-toggle="tab">Mitmachen</a></li>
 </ul>
 
 <div id="my-tab-content" class="tab-content">
   <div class="tab-pane active" id="home">
     <%= render partial: "home_content" %>
-  </div>
-  <div class="tab-pane" id="student">
-    <%= render partial: "student_content" %>
   </div>
   <div class="tab-pane" id="parent">
     <%= render partial: "parent_content" %>

@@ -27,6 +27,12 @@ de:
         class_min: "Ab welcher Klasse"
         class_max: "Bis welche Klasse"
         where: "Findet wo statt"
+        expence: "Geschätzte Kosten"
+        payroll_form: "Abrechnungsformular erwünscht"
+        children_material: "Die Kinder nehmen mit"
+        material: "Ich brauche an Material"
+        notes_for_path: "Anmerkung für den Weg zum Kursort"
+
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'

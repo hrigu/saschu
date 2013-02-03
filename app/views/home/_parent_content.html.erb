@@ -6,15 +6,17 @@
         </p>
     <% else %>
         <p class="lead">
-          Schön dass du einen Kurs anbieten möchtest! <br>
-          Das sind deine ersten Schritte:
+          Schön, dass Sie einen Kurs anbieten möchten! <br>
+          Das sind Ihre Schritte:
         <ul>
-          <li>Bitte registriere dich hier: <%= link_to "registrieren...", new_user_registration_path %></li>
-          <li>Beschreibe deinen Kurs</li>
-          <li>Warten...bis die Schüler deinem Kurs zugeteilt sind.</li>
-          <li>Den Kurs durchführen!</li>
+          <li>Bitte registrieren Sie sich hier:
+            <strong> <%= link_to "registrieren...", new_user_registration_path %></strong></li>
+          <li>Beschreiben Sie Ihren Kurs Online, <b>bis am Donnerstag den 14. Februar 2013</b></li>
+          <li>Danach erhalten Sie bis zu den Frühlingsferien einen
+            Kurszettel mit allen wichtigen Angaben per Post.
+          </li>
+          <li>am Freitag den 3. Mai den Kurs durchführen!</li>
         </ul>
-
         </p>
     <% end %>
 <% else %>

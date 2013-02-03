@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
     @course = Course.new(params[:course])
     @course.parent = current_user.rolable
     if @course.save
-      redirect_to @course, notice: 'Kurs wurde erstellt. Danke!.'
+      redirect_to @course, notice: 'Der Kurs wurde erstellt. Danke!.'
     else
       render action: "new"
     end

@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-  attr_accessible :title, :description, :class_max, :class_min, :where, :capacity
+  attr_accessible :title, :description, :class_max, :class_min, :where, :capacity, :expence, :payroll_form, :children_material, :material, :notes_for_path
   belongs_to :parent
   has_many :choosen_courses
   has_many :students, :through => :choosen_courses

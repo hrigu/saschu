@@ -22,6 +22,26 @@
     <td><b>Für welche Klassen:</b></td>
     <td><%= @course.class_min %> - <%= @course.class_max %> Klasse</td>
   </tr>
+  <tr>
+    <td><b>Geschätzte Kosten:</b></td>
+    <td><%= @course.expence %> Franken</td>
+  </tr>
+  <tr>
+    <td><b>Abrechnungsformular:</b></td>
+    <td><%= @course.payroll_form? ? "Ja": "Nein" %></td>
+  </tr>
+  <tr>
+    <td><b>Die Kinder nehmen mit:</b></td>
+    <td><%= @course.children_material%></td>
+  </tr>
+  <tr>
+    <td><b>Ich brauche an Material:</b></td>
+    <td><%= @course.material%></td>
+  </tr>
+  <tr>
+    <td><b>Weg zum Kursort:</b></td>
+    <td><%= @course.notes_for_path%></td>
+  </tr>
 </table>
 
 <% if State.state_is_kurse_buchen? %>
@@ -47,9 +67,6 @@
 <% end %>
 
 <% if State.state_is_kurse_eingeben? %>
-    <div class="well">
-      Komm später wieder mal vorbei, dann siehst du welche Schüler diesem Kurs zugeteilt wurden.
-    </div>
     <%= link_to 'editieren...', edit_course_path(@course) %> |
     <%= link_to 'löschen...', @course, method: :delete, data: {confirm: 'Wills du den Kurs wirklich löschen?'} %>
 <% end %>
